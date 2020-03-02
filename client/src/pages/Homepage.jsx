@@ -32,7 +32,10 @@ const Homepage = () => {
             {["open", "in progress", "in review", "done"].map(status => {
                 return (
                     <div key={status} className={"col-wrapper"}>
-                        <h2 className={"col-header"}>{status.toUpperCase()}</h2>
+                        <div className={"col-group"}>
+                            <h5 className={"col-header"}>{status.toUpperCase()}</h5>
+                            <p className={"col-count"}>{items.filter(i => i.status === status).length}</p>
+                        </div>
                         <DropWrapper onDrop={onDrop} status={status}>
                             <Col>
                                 {items

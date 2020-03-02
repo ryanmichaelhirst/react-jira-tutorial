@@ -3,14 +3,9 @@
 :root {
     --primary-color: rgb(62, 100, 255);
     --complete-color: #27aa80;
-    --text-color: #172b4d;
+    --text-color: #8B94A7;
     --disabled-color: #fad6d6;
-    --background-color: #f5eaea;
-}
-
-html {
-    background: rgb(0,73,191);
-    background: linear-gradient(90deg, rgba(0,73,191,1) 0%, rgba(190,190,255,1) 46%, rgba(0,212,255,1) 100%);
+    --background-color: #F1F3F5;
 }
 
 body {
@@ -105,11 +100,23 @@ select {
     border-radius: 5px;
 }
 
-.col-header {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 20px;
+.col-group {
+    display: flex;
+    flex-direction: row;
     margin-top: 0;
+    margin-bottom: 20px;
+    color: #778399;
+    font-size: 0.83em;
+}
+
+.col-header, .col-count {
+    font-size: inherit;
+    margin-top: inherit;
+    margin-bottom: unset;
+}
+
+.col-count {
+    margin-left: 10px;
 }
 
 .col {
@@ -123,9 +130,9 @@ select {
 }
 
 .page-header {
-    background-color: #054F7C;
+    background-color: #F4F5F7;
     padding: 20px;
-    color: white;
+    color: #0052CC;
     font-size: 30px;
     flex: 1 100%;
     margin-top: 0;

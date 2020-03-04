@@ -60,7 +60,10 @@ const Item = ({ item, index, moveItem }) => {
                 onClick={onOpen}
             >
                 <p>{item.content}</p>
-                <p>{item.icon}</p>
+                <div className={"item-icons"}>
+                    {item.issueType}
+                    {item.priority}
+                </div>
             </div>
             <Window
                 item={item}

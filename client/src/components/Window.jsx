@@ -20,10 +20,14 @@ const Window = ({ show, onClose, item }) => {
                 <p>{item.content}</p>
                 <h2>Status</h2>
                 <p>{item.icon} {`${item.status.charAt(0).toUpperCase()}${item.status.slice(1)}`}</p>
-                {/*<h2>Priority</h2>*/}
-                {/*<p>{item.priority}</p>*/}
-                {/*<h2>Issue type</h2>*/}
-                {/*<p>{item.issueType}</p>*/}
+                <h2>Priority</h2>
+                <p>
+                    <i className={item.priority} />
+                </p>
+                <h2>Issue type</h2>
+                <p>
+                    <i className={item.issueType} />
+                </p>
                 <h2>Estimate</h2>
                 <p>{item.estimate}</p>
             </div>

@@ -6,32 +6,36 @@ const data = [{
     status: "open",
     title: "Human Interest Form",
     content: "Fill out human interest distribution form",
-    issueType: <i className="gg-bookmark" />,
-    priority: <i className="gg-chevron-double-down" />
+    issueType: "gg-bookmark",
+    priority: "gg-chevron-double-down",
+    estimate: "30m"
 }, {
     id: 2,
     icon: "⭕️",
     status: "open",
     title: "Purchase present",
     content: "Get an anniversary gift",
-    issueType: <i className="gg-copy" />,
-    priority: <i className="gg-chevron-down" />
+    issueType: "gg-copy",
+    priority: "gg-chevron-down",
+    estimate: "4h"
 }, {
     id: 3,
     icon: "⭕️",
     status: "open",
     title: "Invest in investments",
     content: "Call the bank to talk about investments",
-    issueType: <i className="gg-pentagon-down" />,
-    priority: <i className="gg-chevron-double-up" />
+    issueType: "gg-pentagon-down",
+    priority: "gg-chevron-double-up",
+    estimate: "1d"
 }, {
     id: 4,
     icon: "⭕️",
     status: "open",
     title: "Daily reading",
     content: "Finish reading Intro to UI/UX",
-    priority: <i className="gg-chevron-up" />,
-    issueType: <i className="gg-remove" />
+    priority: "gg-chevron-up",
+    issueType: "gg-remove",
+    estimate: "2w"
 }];
 
 const statusIcons = [{

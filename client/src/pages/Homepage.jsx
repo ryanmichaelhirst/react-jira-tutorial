@@ -6,10 +6,14 @@ import { data, statusIcons } from "../data";
 
 const Homepage = () => {
     const [items, setItems] = useState(data);
+    const [dragEl, setDragEl] = useState(null);
 
     const onDrop = (item, status) => {
-        const mapping = statusIcons.find(si => si.status === status);
+        if (item.status === status) {
+            return;
+        }
 
+        const mapping = statusIcons.find(si => si.status === status);
         setItems(prevState => {
             const newItems = prevState
                 .filter(i => i.id !== item.id)
@@ -17,6 +21,20 @@ const Homepage = () => {
             return [ ...newItems ];
         });
     };
+
+    const moveItem = el => {
+        setItems(prevState => {
+            const itemIndex = prevState.findIndex(i => i.content === dragEl.content);
+            const hoverIndex = prevState.findIndex(i => i.content === el);
+            const newState = [ ...prevState ];
+
+            newState.splice(itemIndex, 1);
+            newState.splice(hoverIndex, 0, dragEl);
+            return [ ...newState ];
+        });
+    };
+
+    const setDragElement = el => setDragEl(el);
 
     return (
         <div className={"row"}>
@@ -31,7 +49,14 @@ const Homepage = () => {
                             <Col>
                                 {items
                                     .filter(i => i.status === status)
-                                    .map((i, idx) => <Item key={i.id} item={i} index={idx} />)
+                                    .map(i => (
+                                        <Item
+                                            key={i.id}
+                                            item={i}
+                                            moveItem={moveItem}
+                                            setDragElement={setDragElement}
+                                        />
+                                    ))
                                 }
                             </Col>
                         </DropWrapper>

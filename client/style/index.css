@@ -6,6 +6,7 @@
     --text-color: #8B94A7;
     --disabled-color: #fad6d6;
     --background-color: #F1F3F5;
+    --ggs: 1.1;
 }
 
 body {
@@ -76,7 +77,7 @@ select {
 .item {
     font-size: 15px;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 10px 14px;
     border-radius: 5px;
     z-index: 1;
     background-color: white;
@@ -89,6 +90,7 @@ select {
 .item-icons {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .item-icons > * {
@@ -185,4 +187,43 @@ select {
 
 .close-btn:hover {
     background-color: #DCDCDC;
+}
+
+.gg-chevron-double-up {
+    color: #FF7451;
+}
+
+.gg-chevron-up {
+    color: #FF8F73;
+}
+
+.gg-chevron-down {
+    color: #0065FF;
+}
+
+.gg-chevron-double-down {
+    color: #2683FF;
+}
+
+.gg-remove {
+    color: #D24230;
+}
+
+.gg-pentagon-down {
+    color: #654783;
+}
+
+.gg-bookmark {
+    color: #65AC43;
+}
+
+.gg-copy {
+    color: #367DC6;
+}
+
+.est-tag {
+    background-color: #DEE0E6;
+    border-radius: 25px;
+    padding: 2px 6px;
+    font-weight: 600;
 }

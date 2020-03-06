@@ -36,6 +36,29 @@ const Homepage = () => {
 
     const setDragElement = el => setDragEl(el);
 
+    const onAddItem = col => {
+        console.log("add item placeholder", col);
+        const status = statusIcons.find(si => si.status === col);
+
+        setItems(prevState => {
+            const highestId = Math.max.apply(Math, prevState.map(i => i.id));
+
+            return [
+                ...prevState,
+                {
+                    id: highestId + 1,
+                    icon: status.icon,
+                    status: status.status,
+                    title: `Placeholder item for id ${highestId + 1}`,
+                    content: "Example",
+                    issueType: "gg-bookmark",
+                    priority: "gg-chevron-double-down",
+                    estimate: "0m"
+                }
+            ];
+        });
+    };
+
     return (
         <div className={"row"}>
             {["open", "in progress", "in review", "done"].map(status => {
@@ -58,6 +81,9 @@ const Homepage = () => {
                                         />
                                     ))
                                 }
+                                <button onClick={e => onAddItem(status)}>
+                                    Add ticket
+                                </button>
                             </Col>
                         </DropWrapper>
                     </div>

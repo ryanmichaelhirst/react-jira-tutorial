@@ -1,10 +1,8 @@
 import React from "react";
 
-const Col = ({ isOver, children }) => {
-    const className = isOver ? " highlight-region" : "";
-
+const Col = ({ children }) => {
     return (
-        <div className={`col${className}`}>
+        <div className={"col"}>
             {children}
         </div>
     );
